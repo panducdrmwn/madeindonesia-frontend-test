@@ -36,12 +36,11 @@ function buildStlModel(data: ArrayBuffer, fileName: string): ModelItem {
 
   const group = new THREE.Group();
   group.add(mesh);
-
-  const boundingBox = new THREE.Box3().setFromObject(group);
-  const center = new THREE.Vector3();
-  boundingBox.getCenter(center);
-  group.position.copy(center.multiplyScalar(-1));
   group.name = fileName;
+
+  // IMPORTANT: Preserve original STL coordinates for proper spatial positioning
+  // Do NOT center the group - the STL files already contain correct world-space coordinates
+  // This allows multiple STL files to be positioned correctly relative to each other
 
   return {
     id: `${Date.now()}-${fileName}`,

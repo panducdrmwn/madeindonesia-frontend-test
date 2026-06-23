@@ -9,6 +9,8 @@ Create a PRD based on this Technical Test – Frontend Developer (React_Next+Thr
 Build a simple web-based 3D viewer based on the PRD file
 ### Prompt 3
 Fix the zooming with scroll wheel problem
-## Manual Adjustments
+### Prompt 4
+Check the spacing on every STL assets uploaded. please display the file with proper spacing based on their original STL coordinates
 
+## Manual Adjustments
 - Fixed dragging keep snapping back issues.
